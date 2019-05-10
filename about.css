@@ -313,5 +313,16 @@ img.logo {
 .btn-download:hover {
   background-color: rgba(116, 116, 116, 0.61);
 }
+@media screen and (max-width: 375px) {
+  #aboutme {
+    padding: 1.6rem;
+    display: grid;
+    grid-template-areas: "imgstory" "menow" "mefuture";
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
 
 /*# sourceMappingURL=about.css.map */
