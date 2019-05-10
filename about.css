@@ -313,7 +313,7 @@ img.logo {
 .btn-download:hover {
   background-color: rgba(116, 116, 116, 0.61);
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 480px) {
   #aboutme {
     padding: 1.6rem;
     display: grid;
