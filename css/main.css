@@ -1,0 +1,258 @@
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  transition: all 0.7s ease-out;
+}
+.menu-btn .btn-line {
+  width: 28px;
+  height: 3px;
+  margin: 0 0 5px 0;
+  background: #fd0101;
+  transition: all 0.7s ease-out;
+}
+.menu-btn.close {
+  transform: rotate(180deg);
+}
+.menu-btn.close .btn-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+  background: white;
+}
+.menu-btn.close .btn-line:nth-child(2) {
+  opacity: 0;
+}
+.menu-btn.close .btn-line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+  background: white;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0.9;
+  visibility: hidden;
+}
+.menu.show {
+  visibility: visible;
+}
+.menu-brand {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  padding-top: 20px;
+  float: left;
+  width: 50%;
+  height: 100vh;
+  overflow: hidden;
+}
+.menu-nav {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  width: 50%;
+  height: 100vh;
+  overflow: hidden;
+}
+.menu-nav {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+    to right,
+    #4776e6,
+    #6c24e0a8,
+    rgba(98, 59, 241, 0.733)
+  );
+  height: 100vh;
+  list-style: none;
+  transform: translate3d(0, -100%, 0);
+  transition: all 0.7s ease-out;
+}
+.menu-nav.show {
+  transform: translate3d(0, 0, 0);
+}
+.menu-brand {
+  transform: translate3d(0, 100%, 0);
+  background: linear-gradient(to right, #8e54e9, #4776e6);
+  transition: all 0.7s ease-out;
+}
+.menu-brand.show {
+  transform: translate3d(0, 0, 0);
+}
+.menu-brand .portpic {
+  width: 150px;
+  height: 150px;
+  background: url("/imges/profilepic.jpg");
+  border-radius: 50%;
+  border: 2px solid red;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.menu .nav-item {
+  transform: translate3d(600px, 0, 0);
+  transition: all 0.7s ease-out;
+}
+.menu .nav-item.show {
+  transform: translate3d(0, 0, 0);
+}
+.menu .nav-item.current > a {
+  color: #fd0101;
+}
+.menu .nav-links {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 20px;
+  padding: 0.6rem 0;
+  font-weight: 300;
+  color: white;
+  text-decoration: none;
+  transition: all 0.7s ease-out;
+}
+.menu .nav-links:hover {
+  color: #fd0101;
+}
+
+.nav-item:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.nav-item:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.nav-item:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.nav-item:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+@media screen and (max-width: 500px) {
+  main#home h1 {
+    margin-top: 10vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center;
+  }
+  main .lg-heading {
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+  ul.menu-nav,
+  div.menu-brand {
+    float: none;
+    width: 100%;
+    min-hight: 0;
+  }
+  ul.menu-nav.show,
+  div.menu-brand.show {
+    transform: translate3d(0, 0, 0);
+  }
+  ul.menu-nav {
+    padding-top: 50px;
+  }
+  .menu-nav {
+    height: 70vh;
+    transform: translate3d(-100, 0, 0);
+    font-size: 24px;
+  }
+  .menu-brand {
+    height: 30vh;
+    transform: translate3d(100, 0, 0);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #200b7a;
+  color: #fff;
+  margin: 0;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  line-height: 1.5;
+}
+body#bg-img {
+  background: url(/imges/backg.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+body#bg-img:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: rgba(32, 11, 122, 0.8);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+}
+h1.lg-heading,
+h2.lg-heading,
+h3.lg-heading {
+  font-size: 3rem;
+}
+h1.sm-heading,
+h2.sm-heading,
+h3.sm-heading {
+  margin-bottom: 2rem;
+  padding: 0.2rem 1rem;
+  background: rgba(34, 12, 131, 0.5);
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.initoook {
+  color: #fd0101;
+}
+
+main {
+  padding: 4rem;
+  height: 100%;
+}
+main .icons {
+  margin-top: 1rem;
+}
+main .icons a {
+  padding: 0.4rem;
+}
+main .icons a:hover {
+  color: gold;
+  transition: all 0.7s ease-out;
+}
+main#home {
+  overflow: hidden;
+}
+main#home h1 {
+  margin-top: 20vh;
+}

@@ -1,0 +1,234 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),
+    url(/imges/background.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+html {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: #ffffff;
+  height: 100%;
+}
+nav.mainnav {
+  width: 100%;
+  background-color: #9f46f3;
+  overflow: hidden;
+  height: 63px;
+  display: block;
+}
+
+nav.mainnav a {
+  float: left;
+  position: relative;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+nav.mainnav ul {
+  margin: 8px 0 0 0;
+  list-style: none;
+}
+
+nav.mainnav .current {
+  color: red;
+}
+
+h1 {
+  margin: 10px;
+}
+
+.currentme {
+  color: red;
+}
+
+.pushdown-nav {
+  height: 0;
+  width: 100%;
+  z-index: 1;
+  font-size: 1.6rem;
+  top: 63px;
+  bottom: 0;
+  line-height: 1.5rem;
+  transition: all 0.5s ease;
+  position: fixed;
+  background-color: rgb(20, 19, 19);
+  opacity: 0.9;
+  overflow-x: hidden;
+}
+
+.pushdown-nav a {
+  padding: 20px 10px 10px 30px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: white;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+nav.pushdown-nav a:nth-child(2) {
+  padding-top: 30px;
+}
+
+nav.pushdown-nav .hov1:hover {
+  border-bottom: 1px solid #9f46f3;
+  color: #7f11e6;
+  padding-left: 10px;
+  -webkit-transition: cubic-bezier(0.175, 0.885, 0.32, 1.275), 0.5s;
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275), 0.5s;
+}
+
+nav.mainnav ul li a::before,
+nav.mainnav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: red;
+  left: 0;
+  transform: scaleX(0);
+  transition: all ease 0.3s;
+}
+nav.mainnav ul li a::before {
+  top: 0;
+  transform-origin: left;
+}
+
+nav.mainnav ul li a::after {
+  bottom: 0;
+  transform-origin: right;
+}
+nav.mainnav ul li a:hover::before,
+nav.mainnav ul li a:hover::after {
+  transform: scaleX(1);
+}
+.pushdown-nav .btn-close {
+  margin-top: 0;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  font-size: 2rem;
+  padding: 10px;
+  color: red;
+  border: 1px rebeccapurple solid;
+}
+#aboutme {
+  display: grid;
+
+  grid-template-areas:
+    "imgstory menow"
+    "imgstory mefuture";
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  box-sizing: border-box;
+  width: 100%;
+}
+.box {
+  width: 90%;
+  height: auto;
+  border: 2px solid rgba(212, 206, 206, 0.856);
+  box-sizing: border-box;
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  padding: 0;
+}
+img {
+  width: 100%;
+  height: 50%;
+}
+.imgstory {
+  grid-area: imgstory;
+  grid-column: 1/2;
+}
+.menow {
+  grid-area: menow;
+}
+.mefuture {
+  grid-area: mefuture;
+}
+
+@media (max-width: 568px) {
+  .mainnav-ul {
+    display: none;
+  }
+}
+.footer {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  background-color: rgba(210, 29, 247, 0.336);
+  display: flex;
+  color: rgb(255, 0, 0);
+  padding: 10px;
+  justify-content: space-between;
+}
+img.logo {
+  width: 50px;
+  height: 50px;
+}
+.iconify {
+  width: 30px;
+  height: 30px;
+}
+
+#contactme {
+  display: grid;
+  align-content: center;
+  justify-content: baseline;
+  margin: 20px;
+  color: rgb(255, 255, 255);
+}
+
+#contactme {
+  width: 360px;
+  margin: 100px auto;
+  padding: 2.5rem;
+  border-radius: 5%;
+  background: rgba(37, 37, 33, 0.5);
+  box-shadow: 0 20px 6px -6px black;
+}
+.cntlist h3 {
+  text-align: center;
+}
+#contactme p {
+  text-align: center;
+}
+.cntlist ul {
+  list-style: none;
+  line-height: 3rem;
+  text-justify: auto;
+  padding: 1rem;
+  margin-left: 10px;
+}
+.cntlist ul li {
+  font-size: 1rem;
+}
+#contactme .iconify {
+  color: red;
+  margin-right: 10px;
+}
+
+/* @media screen and (min-width: 776px) {
+  .about-card {
+    max-width: 50%;
+    border-radius: 30px;
+  }
+} */
